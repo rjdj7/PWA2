@@ -1,0 +1,44 @@
+/* John Smith
+
+color scheme: red: #962D3E; dark blue-ish black: #343642; grey: #979C9C; baige: #F2EBC7; turquoise: #348899; */
+
+/* Body-related CSS -------------------------------- */
+
+#wrapper {
+	width: 800px;
+	margin: 0 auto;
+	background-color: #962D3E;
+	padding: 10px;
+}
+
+body {
+	background-color: #348899;
+	color: white;
+	font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+/* Header-specific CSS ------------------------------ */
+
+h1 {
+	background-color: #343642;
+	padding: 10px;
+	margin-top: 0px;
+}
+
+/* Form-specific CSS -------------------------------- */
+
+form    {
+	margin:auto;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 14px;
+	font-style: italic;
+	line-height: 24px;
+	font-weight: bold;
+	padding:10px;
+}
+
+#welcomeUserForm {
+	display: inline;
+	position: relative;
+	left: 600px;
+}
