@@ -1,0 +1,83 @@
+<!--
+	John Smith
+-->
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Register</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- CSS concatenated and minified via ant build script-->
+	<link rel="stylesheet" href="css/style.css">
+	<!-- end CSS-->
+	
+	<!-- jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<!-- plugins -->
+
+	
+	<!-- main -->
+	<script type="text/javascript" src="js/main.js"></script>
+</head>
+<div id="wrapper">
+<body>
+
+	<h1>Current Projects</h1>
+
+	 <span class="welcomeUser">Welcome User:</span>
+
+	<form class="welcomeUserForm">
+		<input type="submit" value="Sign Out"/>
+	</form>
+
+	<form class="dashForm">
+		<input type="submit" value="Dashboard"/>
+	</form>
+
+
+	<div class="welcome">
+		<p><a href="#" class="modalClick">Add +</a></p>
+	</div>
+
+	<div id="overlay">
+		<div id="modal">
+			<span class="close">X</span>
+	  <h3 class="header">Add Project</h3>
+	  <div id="add">
+	  		<form id="addForm">
+		  		 <label>Project Name: </label>
+		  		  	<input name="projectName" type="text" id="projectName"/><br>
+		  		 <label>Project Description: </label>
+		  		 	<input name="projectDescription" type="text" id="projectDescription"/><br>
+		  		 <label>Project Due Date:</label>
+		  		 	<input name="projectDueDate" type="text" id="projectDueDate"/><br>
+		  		 <label for="status">Select Status:</label><br>
+
+		  		 <label class="mystatus"><input type="radio" name="status" id="urgent"> <img src="images/bt1.jpg" width="69" height="75"> </label>
+		  		 <label class="mystatus"><input type="radio" name="status" id="normal"> <img src="images/bt2.jpg" width="69" height="75"> </label>
+		  		 <label class="mystatus"><input type="radio" name="status" id="delayed"> <img src="images/bt3.jpg" width="69" height="75"> </label>
+		  		 <label class="mystatus"><input type="radio" name="status" id="complete"> <img src="images/bt4.jpg" width="69" height="75"> </label><br>
+
+		  		 <input name="addButton" type="button" id="addButton" value="Add"/>
+	  		 </form>
+
+
+	<div id="projectList">
+		<h2>Projects</h2>
+
+		<div class="projects">
+
+		</div>
+	</div>
+
+
+</div>  
+</body>
+</html>
