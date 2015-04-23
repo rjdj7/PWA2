@@ -28,23 +28,17 @@
 	<link rel="stylesheet" href="css/style.css">
 	<!-- end CSS-->
 	
-	<!-- jquery -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<!-- plugins -->
 
-	
-	<!-- main -->
-	<script type="text/javascript" src="js/main.js"></script>
 </head>
 
 <body>
 <div id="wrapper">
 	<h1>Welcome</h1>
 
-	<form>	
-		Username:<br> <input type="text" name="username"/> <br>
-		Password:<br> <input type="password" name="password"/> <br>
-		<input type="submit" value="Sign In"/>
+	<form id="loginForm">	
+		<label>Username:</label><br> <input type="text" name="signinButton" id="user" title="Please Enter Username"/> <br>
+		<label>Password:</label><br> <input type="password" name="signinButton" id="pass" title="Please Enter Password"/> <br>    
+		<input type="submit" name="signinButton" value="Sign In" id="signinButton"/>
 	</form>
 
 	<h2>Not a member?</h2>
@@ -55,6 +49,13 @@
 		<input type="submit" value="Sign Up"/>
 	</form>
 </div>
+	<!--ALL SCRIPT TAGS SHOULD BE PLACED AT THE BOTTOM RIGHT ABOUT THE CLOSED BODY TAG-->
+	<!-- jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<!-- plugins -->
+	
+	<!-- main -->
+	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
 

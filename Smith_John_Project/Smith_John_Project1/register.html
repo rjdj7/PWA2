@@ -17,14 +17,6 @@
 	<!-- CSS concatenated and minified via ant build script-->
 	<link rel="stylesheet" href="css/style.css">
 	<!-- end CSS-->
-	
-	<!-- jquery -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<!-- plugins -->
-
-	
-	<!-- main -->
-	<script type="text/javascript" src="js/main.js"></script>
 </head>
 <div id="wrapper">
 <body>
@@ -34,19 +26,24 @@
 	<p>And start connecting with users around the world!</p>
 
 	<form action="admin.html">	
-		First Name:<br> <input type="text" name="firstname"/> <br>
-		Last Name:<br> <input type="text" name="lastname"/> <br>
-		User Name:<br> <input type="text" name="username"/> <br>
-		Email Address:<br> <input type="email" name="email"/> <br>
-		Confirm Email: <br> <input type="email" name="econfirm"/> <br>
-		Password:<br> <input type="password" name="password"/> <br>
-		Confirm Password:<br> <input type="password" name="passconfirm"/> <br><br>
-		<input type="checkbox" name="terms" value="I agree to the terms of service">I agree to the terms of service <br><br>
-
-		<input type="submit" value="Sign Up" />
-
+		<label for="first-name">First Name:</label><br> <input id="first" type="text" name="first-name" title="Enter Your First Name"/> <br> 
+		<label for="last-name">Last Name:</label><br> <input id="last" type="text" name="last-name" title="Enter Your Last Name"/> <br>
+		<label for="user-name">User Name:</label><br> <input id="userName" type="text" name="user-name" title="Enter Your User Name"/> <br>	
+		<label for="email">Email Address:</label><br> <input id="email" type="email" name="email" title="Enter Your Email Address"/> <br>	
+		<label for="confirm">Confirm Email:</label> <br> <input type="email" name="confirm" title="Confirm Your Email"/> <br>	
+		<label for="password">Password:</label><br> <input id="password" type="password" name="password" title="Enter A Password"/> <br>
+		<label for="pass-confirm">Confirm Password:</label><br> <input type="password" name="pass-confirm" title="Confirm Your Password" required/> <br><br>
+		<input type="checkbox" required /> <span>I agree to the <a href="#">terms</a> and conditions</span> <br><br>
+		<input type="button" id="register" value="Sign Up" /> 
 	</form>
 </div>  
+	<!--ALL SCRIPT TAGS SHOULD BE PLACED AT THE BOTTOM RIGHT ABOUT THE CLOSED BODY TAG-->
+	<!-- jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<!-- plugins -->
+	
+	<!-- main -->
+	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
 

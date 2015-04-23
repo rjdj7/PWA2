@@ -18,14 +18,6 @@
 	<!-- CSS concatenated and minified via ant build script-->
 	<link rel="stylesheet" href="css/style.css">
 	<!-- end CSS-->
-
-	<!-- jquery -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<!-- plugins -->
-
-	
-	<!-- main -->
-	<script type="text/javascript" src="js/main.js"></script>
 </head>
 
 <body>
@@ -34,10 +26,10 @@
 
 	<h1>Welcome</h1>
 
- 	<span class="welcomeUser">Welcome User:</span>
+ 	<span class="userid">Welcome User:</span>
 
 	<form class="welcomeUserForm">
-		<input type="submit" value="Sign Out"/>
+		<input name="logOut" type="button" id="logOut" value="Sign Out"/>
 	</form>
 
 	<p>This is your dashboard area. Please choose one of the following options:</p>
@@ -51,7 +43,9 @@
 		</ul>
 
 		<div id="tab-1" class="tab-content current">
-			 <p>My <a href="projects.html">Projects</a></p>
+			<form>
+				<input class="projectsbtn" name="myProjects" type="button" value="My Projects"/>
+			</form>
 		</div>
 		<div id="tab-2" class="tab-content">
 			 ....
@@ -62,6 +56,15 @@
 
 	</div>
 </div>
+
+	<!--ALL SCRIPT TAGS SHOULD BE PLACED AT THE BOTTOM RIGHT ABOUT THE CLOSED BODY TAG-->
+	<!-- jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<!-- plugins -->
+	
+	<!-- main -->
+	<script type="text/javascript" src="js/main.js"></script>
+
 </body>
 </html>
 
