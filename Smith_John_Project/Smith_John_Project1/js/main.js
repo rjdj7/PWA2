@@ -39,10 +39,11 @@ $(document).ready(function(){
 
 	/* SignIn Javascript ------------------------ */
 
-	$("#signinButton").click(function(){
+	$("#signinButton").on('click', function(e) {  //FORGOT THE EVENT and On method
+		e.preventDefault();
 		var user = $("#user").val();
 		var pass = $("#pass").val();
-		console.log("This notifies you if the password is working.");
+		//console.log("This notifies you if the password is working.");
 		$.ajax({
 			url: "xhr/login.php",
 			type: "post",
@@ -56,9 +57,9 @@ $(document).ready(function(){
 				if (response.error){
 					alert(response.error);
 				}else{
-					window.location.assign("admin.html")
+					window.location.assign("admin.html");
 				};
-			})
+			}    //Had )   will cause error
 		});
 	});
 
@@ -144,11 +145,66 @@ $(document).ready(function(){
 				if(response.error) {
 					alert(response.error);
 				} else {
-					window.location.assign("projects.html");
+					for(var i=0, j=response.projects.length; i < j; i++){
+						var result = response.projects[i];
+
+						$(".projects").append(
+							' <div id="sortable" class="ui-state-default">' +
+							" <input class='projectid' type='hidden' value='" + result.id + "'>" +
+							" Project Name: " + result.projectName + "<br>" +
+							" Project Description: " + result.projectDescription + "<br>" +
+							" Project Due Date: " + result.dueDate + "<br>" +
+							" Project Status: " + result.status + "<br>" +
+							' <button class="deletebtn ui-state-default">Delete</button>' +
+							' <button class="editbtn ui-state-default">Edit</button>' +
+							' </div> <br>'
+						);
+					};
+
+						$('.deletebtn').on('click', function(e){
+							var pid = $(this).parent().find(".projectid").val();
+							console.log('test delete');
+								alert("You have successfully deleted the project");
+							$.ajax({
+								url: 'xhr/delete_project.php',
+								data: {
+									projectID: pid
+								},
+								type: 'POST',
+								dataType: 'json',
+								success: function(response){
+									console.log('Testing for success');
+
+									if(response.error) {
+										alert(response.error);
+									} else {
+										window.location.assign("projects.html")
+									};
+								}
+							});
+						}); //End delete
+						
+						$('.editbtn').on('click', function(e){
+							e.preventDefault();
+
+							$('#editor')
+								.fadeIn()
+								.find('#editmodal')
+								.fadeIn();
+
+						});
 				};
 			}
 		});
 	});
+
+	/* Plugins Javascript ------------------------ */
+
+	 $( ".datepicker" ).datepicker();
+
+	 $( "#sortable" ).sortable();
+
+     $( "#sortable" ).disableSelection();
 
 
 });

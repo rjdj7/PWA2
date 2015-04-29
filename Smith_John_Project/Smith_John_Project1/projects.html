@@ -16,6 +16,7 @@
 	
 	<!-- CSS concatenated and minified via ant build script-->
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="js/plugins/blueimp-Gallery-3336226/css/blueimp-gallery.min.css">
 	<!-- end CSS-->
 </head>
 <div id="wrapper">
@@ -33,48 +34,94 @@
 		<input type="submit" value="Dashboard"/>
 	</form>
 
-
-	<div class="welcome">
-		<p><a href="#" class="modalClick">Add +</a></p>
+	<h2>Featured Content</h2>
+	<!-- The container for the list of example images -->
+	<div id="links" class="links"></div>
+	<!-- Lightbox controls -->
+	<div id="blueimp-gallery" class="blueimp-gallery">
+	    <div class="slides"></div>
+	    <h3 class="title"></h3>
+	    <a class="prev">‹</a>
+	    <a class="next">›</a>
+	    <a class="close">×</a>
+	    <a class="play-pause"></a>
+	    <ol class="indicator"></ol>
 	</div>
+
+	<!-- Has the clickable thumbnail that should bring you to the full version of the img -->
+	<div id="links">
+	    <a href="images/placeholder.png">
+	        <img src="images/placeholder.png">
+	    </a>
+	    <a href="images/placeholder.png">
+	        <img src="images/placeholder.png">
+	    </a>
+	    <a href="images/placeholder.png">
+	        <img src="images/placeholder.png">
+	    </a>
+	</div>
+
+	<section>
+		<div class="welcome">
+			<p><a href="#" class="modalClick">Add +</a></p>
+		</div>
+
+			<h2>Projects</h2>
+
+			<div id="sortable" class="projects">
+			</div>
+	</section>
 
 	<div id="overlay">
 		<div id="modal">
-			<span class="close">X</span>
-	  <h3 class="header">Add Project</h3>
-	  <div id="add">
-	  		<form id="addForm">
-		  		 <label>Project Name: </label>
-		  		  	<input name="projectName" type="text" id="projectName"/><br>
-		  		 <label>Project Description: </label>
-		  		 	<input name="projectDescription" type="text" id="projectDescription"/><br>
-		  		 <label>Project Due Date:</label>
-		  		 	<input name="projectDueDate" type="text" id="projectDueDate"/><br>
-		  		 <label for="status">Select Status:</label><br>
+				<span class="close">X</span>
+		  <h3 class="header">Add Project</h3>
+		  <div id="add">
+		  		<form id="addForm">
+			  		 <label>Project Name: </label>
+			  		  	<input name="projectName" type="text" id="projectName"/><br>
+			  		 <label>Project Description: </label>
+			  		 	<input name="projectDescription" type="text" id="projectDescription"/><br>
+			  		 <label>Project Due Date:</label>
+			  		 	<input name="projectDueDate" type="text" id="projectDueDate" class="datepicker"/><br>
+			  		 <label for="status">Select Status:</label><br>
 
-		  		 <label class="mystatus"><input type="radio" name="status" id="urgent"> <img src="images/bt1.jpg" width="69" height="75"> </label>
-		  		 <label class="mystatus"><input type="radio" name="status" id="normal"> <img src="images/bt2.jpg" width="69" height="75"> </label>
-		  		 <label class="mystatus"><input type="radio" name="status" id="delayed"> <img src="images/bt3.jpg" width="69" height="75"> </label>
-		  		 <label class="mystatus"><input type="radio" name="status" id="complete"> <img src="images/bt4.jpg" width="69" height="75"> </label><br>
+			  		 <label class="mystatus"><input type="radio" name="status" id="urgent"> <img src="images/bt1.jpg" width="69" height="75"> </label>
+			  		 <label class="mystatus"><input type="radio" name="status" id="normal"> <img src="images/bt2.jpg" width="69" height="75"> </label>
+			  		 <label class="mystatus"><input type="radio" name="status" id="delayed"> <img src="images/bt3.jpg" width="69" height="75"> </label>
+			  		 <label class="mystatus"><input type="radio" name="status" id="complete"> <img src="images/bt4.jpg" width="69" height="75"> </label><br>
 
-		  		 <input name="addButton" type="button" id="addButton" value="Add"/>
-	  		 </form>
-
-
-	<div id="projectList">
-		<h2>Projects</h2>
-
-		<div class="projects">
-
-		</div>
+			  		 <input name="addButton" type="button" id="addButton" value="Add"/>
+		  		</form>
+	  		</div>
+	  	</div>
 	</div>
+
 </div>  
 
 <!--ALL SCRIPT TAGS SHOULD BE PLACED AT THE BOTTOM RIGHT ABOUT THE CLOSED BODY TAG-->
 	<!-- jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<!-- plugins -->
-	
+	<script type="text/javascript" src="js/plugins/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+
+	<script src="js/plugins/blueimp-Gallery-3336226/js/blueimp-helper.js"></script>
+	<script src="js/plugins/blueimp-Gallery-3336226/js/blueimp-gallery.js"></script>
+	<script src="js/plugins/blueimp-Gallery-3336226/js/blueimp-gallery-fullscreen.js"></script>
+	<script src="js/plugins/blueimp-Gallery-3336226/js/blueimp-gallery-indicator.js"></script>
+	<script src="js/plugins/blueimp-Gallery-3336226/js/blueimp-gallery-video.js"></script>
+	<script src="js/plugins/blueimp-Gallery-3336226/js/blueimp-gallery-vimeo.js"></script>
+	<script src="js/plugins/blueimp-Gallery-3336226/js/blueimp-gallery-youtube.js"></script>
+	<script>
+		document.getElementById('links').onclick = function (event) {
+		    event = event || window.event;
+		    var target = event.target || event.srcElement,
+		        link = target.src ? target.parentNode : target,
+		        options = {index: link, event: event},
+		        links = this.getElementsByTagName('a');
+		    	blueimp.Gallery(links, options);
+		};
+	</script>
 	<!-- main -->
 	<script type="text/javascript" src="js/main.js"></script>
 
